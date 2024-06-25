@@ -26,6 +26,6 @@ const getMessages = lang => {
   }
 };
 
-const i18nProvider = polyglotI18nProvider(getMessages, process.env.REACT_APP_LANG);
+const i18nProvider = polyglotI18nProvider(getMessages, import.meta.env.VITE_APP_LANG);
 
 export default i18nProvider;

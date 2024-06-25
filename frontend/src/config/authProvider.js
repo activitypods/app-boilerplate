@@ -6,5 +6,5 @@ export default authProvider({
   authType: 'solid-oidc',
   checkPermissions: true,
   allowAnonymous: false,
-  clientId: process.env.REACT_APP_BACKEND_CLIENT_ID
+  clientId: import.meta.env.VITE_BACKEND_CLIENT_ID
 });

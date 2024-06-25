@@ -1,6 +1,6 @@
 {
-  "short_name": "Pod Provider",
-  "name": "POD Provider",
+  "short_name": "%VITE_APP_NAME%",
+  "name": "%VITE_APP_NAME%",
   "icons": [
     {
       "src": "favicon.ico",
@@ -18,8 +18,8 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "http://localhost:4000",
+  "start_url": "https://welcometomyplace.org",
   "display": "standalone",
-  "theme_color": "#353535",
+  "theme_color": "#FF4F28",
   "background_color": "#ffffff"
 }

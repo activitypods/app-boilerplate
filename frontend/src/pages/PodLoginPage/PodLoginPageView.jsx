@@ -13,41 +13,8 @@ import {
   Card,
   Typography
 } from '@mui/material';
-import makeStyles from '@mui/styles/makeStyles';
 import LockIcon from '@mui/icons-material/Lock';
 import StorageIcon from '@mui/icons-material/Storage';
-
-const useStyles = makeStyles(theme => ({
-  '@global': {
-    body: {
-      backgroundColor: theme.palette.primary.main
-    }
-  },
-  text: {
-    textAlign: 'center',
-    padding: '4px 8px 8px'
-  },
-  card: {
-    minWidth: 300,
-    maxWidth: 350,
-    marginTop: '6em',
-    [theme.breakpoints.down('sm')]: {
-      margin: '1em'
-    }
-  },
-  lockIconAvatar: {
-    margin: '1em',
-    display: 'flex',
-    justifyContent: 'center'
-  },
-  lockIcon: {
-    backgroundColor: theme.palette.grey['500']
-  },
-  list: {
-    paddingTop: 0,
-    paddingBottom: 0
-  }
-}));
 
 const PodProvider = ({ podProvider, onSelect }) => (
   <>
@@ -66,7 +33,6 @@ const PodProvider = ({ podProvider, onSelect }) => (
 );
 
 const PodLoginPageView = ({ text, customPodProviders }) => {
-  const classes = useStyles();
   const notify = useNotify();
   const [searchParams] = useSearchParams();
   const [locale] = useLocaleState();
@@ -74,6 +40,8 @@ const PodLoginPageView = ({ text, customPodProviders }) => {
   const logout = useLogout();
   const translate = useTranslate();
   const [podProviders, setPodProviders] = useState(customPodProviders || []);
+  const isSignup = searchParams.has('signup');
+  const redirect = searchParams.get('redirect');
 
   useEffect(() => {
     (async () => {
@@ -110,19 +78,37 @@ const PodLoginPageView = ({ text, customPodProviders }) => {
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
-      <Card className={classes.card}>
-        <div className={classes.lockIconAvatar}>
-          <Avatar className={classes.lockIcon}>
+      <Card
+        sx={{
+          minWidth: 300,
+          maxWidth: 350,
+          marginTop: '6em'
+        }}
+      >
+        <Box
+          sx={{
+            margin: '1em',
+            display: 'flex',
+            justifyContent: 'center'
+          }}
+        >
+          <Avatar>
             <LockIcon />
           </Avatar>
-        </div>
+        </Box>
         <Box pl={2} pr={2}>
-          <Typography variant="body2" className={classes.text}>
+          <Typography
+            variant="body2"
+            sx={{
+              textAlign: 'center',
+              padding: '4px 8px 8px'
+            }}
+          >
             {text || translate('auth.message.choose_pod_provider')}
           </Typography>
         </Box>
         <Box m={2}>
-          <List className={classes.list}>
+          <List sx={{ paddingTop: 0, paddingBottom: 0 }}>
             {podProviders.map((podProvider, i) => (
               <PodProvider
                 key={i}
@@ -132,7 +118,9 @@ const PodLoginPageView = ({ text, customPodProviders }) => {
                     // TODO include HTTP scheme in Pod providers list
                     issuer: `${podProvider['apods:domainName'].includes('localhost') ? 'http' : 'https'}://${
                       podProvider['apods:domainName']
-                    }`
+                    }`,
+                    redirect,
+                    isSignup
                   })
                 }
               />
