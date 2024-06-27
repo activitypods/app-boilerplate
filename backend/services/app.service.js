@@ -7,8 +7,8 @@ module.exports = {
   mixins: [AppService],
   settings: {
     app: {
-      name: 'Example App',
-      description: 'An ActivityPods-compatible app',
+      name: CONFIG.APP_NAME,
+      description: CONFIG.APP_DESCRIPTION,
       thumbnail: urlJoin(CONFIG.FRONT_URL, 'logo192.png'),
       frontUrl: CONFIG.FRONT_URL
     },
@@ -45,6 +45,14 @@ module.exports = {
           fr: 'Événements'
         },
         labelPredicate: 'as:name',
+        openEndpoint: urlJoin(CONFIG.FRONT_URL, '/r')
+      },
+      'vcard:Individual': {
+        label: {
+          en: 'Profiles',
+          fr: 'Profils'
+        },
+        labelPredicate: 'vcard:given-name',
         openEndpoint: urlJoin(CONFIG.FRONT_URL, '/r')
       }
     },
