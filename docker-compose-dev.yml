@@ -21,14 +21,14 @@ services:
     expose:
       - '3000'
     volumes:
-      - ./data/backend/logs:/app/backend/logs
-      - ./data/backend/jwt:/app/backend/jwt
-      - ./data/backend/uploads:/app/backend/uploads
+      - ./data/activitypods/logs:/app/backend/logs
+      - ./data/activitypods/jwt:/app/backend/jwt
+      - ./data/activitypods/uploads:/app/backend/uploads
     environment:
       SEMAPPS_JENA_PASSWORD: admin
       SEMAPPS_DEFAULT_LOCALE: en
       SEMAPPS_MAPBOX_ACCESS_TOKEN: ${MAPBOX_ACCESS_TOKEN:?You must set it in the .env.local file}
-    # Allow the Pod backend to access the app backend
+    # Allow the Pod backend to access the app backend as localhost:3001
     # See https://docs.docker.com/network/drivers/host/
     network_mode: "host" 
 

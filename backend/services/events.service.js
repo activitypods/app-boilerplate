@@ -38,12 +38,19 @@ module.exports = {
       });
     },
     async onUpdate(ctx, resource) {
-      await ctx.call('timer.set', {
-        key: [resource.id, 'started'],
-        time: resource.startTime,
-        actionName: 'events.tagAsStarted',
-        params: { event: resource }
-      });
+      const existingTimer = await ctx.call('timer.get', { key: [resource.id, 'started'] });
+
+      // If no timer is set, or if the startTime changed
+      if (!existingTimer || resource.startTime !== existingTimer.time) {
+        this.logger.info('Setting a new timer because the startTime changed...');
+
+        await ctx.call('timer.set', {
+          key: [resource.id, 'started'],
+          time: resource.startTime,
+          actionName: 'events.tagAsStarted',
+          params: { event: resource }
+        });
+      }
     }
   }
 };
