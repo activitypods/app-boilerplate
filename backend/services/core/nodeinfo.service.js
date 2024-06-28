@@ -1,7 +1,7 @@
 const urlJoin = require('url-join');
 const { NodeinfoService } = require('@semapps/nodeinfo');
-const CONFIG = require('../config/config');
-const package = require('../package.json');
+const CONFIG = require('../../config/config');
+const package = require('../../package.json');
 
 module.exports = {
   mixins: [NodeinfoService],

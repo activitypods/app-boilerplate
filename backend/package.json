@@ -1,18 +1,15 @@
 {
   "name": "app-backend",
-  "version": "2.0.0-alpha.2",
-  "private": true,
-  "description": "Boilerplate for ActivityPods apps",
   "scripts": {
-    "dev": "moleculer-runner --repl services/*.service.js",
+    "dev": "moleculer-runner --repl services/*.service.js services/**/*.service.js",
     "start": "moleculer-runner services/*.service.js",
     "link-packages": "yarn link @activitypods/app @activitypods/ontologies @activitypods/solid-notifications @semapps/activitypub @semapps/auth @semapps/backup @semapps/core @semapps/crypto @semapps/importer @semapps/inference @semapps/jsonld @semapps/ldp @semapps/middlewares @semapps/migration @semapps/mime-types @semapps/ontologies @semapps/sync @semapps/nodeinfo @semapps/notifications @semapps/pod @semapps/sparql-endpoint @semapps/triplestore @semapps/void @semapps/webacl @semapps/webfinger @semapps/webhooks @semapps/webid",
     "unlink-packages": "yarn unlink @activitypods/app @activitypods/ontologies @activitypods/solid-notifications @semapps/activitypub @semapps/auth @semapps/backup @semapps/core @semapps/crypto @semapps/importer @semapps/inference @semapps/jsonld @semapps/ldp @semapps/middlewares @semapps/migration @semapps/mime-types @semapps/ontologies @semapps/sync @semapps/nodeinfo @semapps/notifications @semapps/pod @semapps/sparql-endpoint @semapps/triplestore @semapps/void @semapps/webacl @semapps/webfinger @semapps/webhooks @semapps/webid"
   },
   "dependencies": {
-    "@activitypods/app": "2.0.0-alpha.2",
-    "@activitypods/ontologies": "2.0.0-alpha.2",
-    "@activitypods/solid-notifications": "2.0.0-alpha.2",
+    "@activitypods/app": "2.0.0-alpha.4",
+    "@activitypods/ontologies": "2.0.0-alpha.4",
+    "@activitypods/solid-notifications": "2.0.0-alpha.4",
     "@semapps/auth": "0.8.2",
     "@semapps/core": "0.8.2",
     "@semapps/crypto": "0.8.2",

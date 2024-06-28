@@ -1,6 +1,5 @@
 {
-  "name": "welcometomyplace-frontend",
-  "private": true,
+  "name": "app-frontend",
   "type": "module",
   "scripts": {
     "dev": "vite",

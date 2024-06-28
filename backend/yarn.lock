@@ -2,21 +2,21 @@
 # yarn lockfile v1
 
 
-"@activitypods/announcer@2.0.0-alpha.2":
-  version "2.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@activitypods/announcer/-/announcer-2.0.0-alpha.2.tgz#6d43cb2d195aff941409496f1ea5e02cbea1b829"
-  integrity sha512-CpG0LLIOGpvndnCENj4Ao24jyjn3f0K5DTSv70VWWlXx1cJCRStrDvzjMBTiNAru/2w9ju38DH+pWI5cqeLChg==
+"@activitypods/announcer@2.0.0-alpha.4":
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@activitypods/announcer/-/announcer-2.0.0-alpha.4.tgz#416e4ee3e851165bb129dac85c52d80eb7fc0909"
+  integrity sha512-q8OWvt9E3rsUdbBFFdDtPck2refWpOMTnUoMbyXUdMeycMgZn1ni6FMW33WNocOc6X8UN1CC9Kn557RBwSc1VQ==
   dependencies:
     "@semapps/activitypub" "0.8.2"
     "@semapps/ldp" "0.8.2"
 
-"@activitypods/app@2.0.0-alpha.2":
-  version "2.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@activitypods/app/-/app-2.0.0-alpha.2.tgz#b4361b43c0426abc3e625a9dbdcdc5857d4a98c5"
-  integrity sha512-nRZkqhNIrycxkJzlDLBI4t28aN2srFU+pOwEuzcJR1h919wndZ/21W28aRBZgDnhFQinjIXw8Zqc/g/TEqNYDw==
+"@activitypods/app@2.0.0-alpha.4":
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@activitypods/app/-/app-2.0.0-alpha.4.tgz#de207bb2f19775d2b925a08855e94d4644da1390"
+  integrity sha512-Qa2oucdMjwDEtHJdaIVaG6Kpl49fW8OuhdcE28d5FVgTZBsH9qffH7Mi3jWhR00yabYP+kSxfWlDF7AEYgZxPA==
   dependencies:
-    "@activitypods/core" "2.0.0-alpha.2"
-    "@activitypods/description" "2.0.0-alpha.2"
+    "@activitypods/core" "2.0.0-alpha.4"
+    "@activitypods/description" "2.0.0-alpha.4"
     "@rdfjs/data-model" "^1.3.4"
     "@semapps/activitypub" "0.8.2"
     "@semapps/ldp" "0.8.2"
@@ -30,16 +30,16 @@
     speakingurl "^14.0.1"
     url-join "^4.0.1"
 
-"@activitypods/core@2.0.0-alpha.2":
-  version "2.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@activitypods/core/-/core-2.0.0-alpha.2.tgz#9eb06a36d029e87b31a7465f6d6f24f0170d9add"
-  integrity sha512-KuIbrAvbVdLf19WOuZ1b1rjI0cWnYtCbhDLuN8FAH+wf+VGPBZGGhuRMARBKH+dqGuUmV+1hl/FP9IcSTIqgtA==
+"@activitypods/core@2.0.0-alpha.4":
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@activitypods/core/-/core-2.0.0-alpha.4.tgz#e2a59db7eee1b425acb6ec5720a179b713e602fe"
+  integrity sha512-9TGQ/Q9+dcAcFBXGaJ5cJaYq3lFhlZei3nRsGmL5eugZNNF9/vqk+IFvDLFZbSaZ0D7RcgIdI5bWb4VcgL9p5w==
   dependencies:
-    "@activitypods/announcer" "2.0.0-alpha.2"
-    "@activitypods/description" "2.0.0-alpha.2"
-    "@activitypods/ontologies" "2.0.0-alpha.2"
-    "@activitypods/solid-notifications" "2.0.0-alpha.2"
-    "@activitypods/type-index" "2.0.0-alpha.2"
+    "@activitypods/announcer" "2.0.0-alpha.4"
+    "@activitypods/description" "2.0.0-alpha.4"
+    "@activitypods/ontologies" "2.0.0-alpha.4"
+    "@activitypods/solid-notifications" "2.0.0-alpha.4"
+    "@activitypods/type-index" "2.0.0-alpha.4"
     "@rdfjs/formats" "4.0.0"
     "@semapps/activitypub" "0.8.2"
     "@semapps/auth" "0.8.2"
@@ -71,31 +71,31 @@
     readable-stream "^4.5.2"
     url-join "^4.0.1"
 
-"@activitypods/description@2.0.0-alpha.2":
-  version "2.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@activitypods/description/-/description-2.0.0-alpha.2.tgz#e5cfffedebd76c98a67fe2ea75d671bb8092e016"
-  integrity sha512-jvgmiYDCCao7yAALRhrkGnGGBbGkGAJ1nfinkg0i+zazgI/twYC96dg2iVyE3FdjXjzUKxWuVm0M3uqgruRlwg==
+"@activitypods/description@2.0.0-alpha.4":
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@activitypods/description/-/description-2.0.0-alpha.4.tgz#153cf800fac4cbf3b0197ebb0091aa914fd5c55f"
+  integrity sha512-l55ikp3IZc8mKqDKP9/t2isJdVWi37JpUa0xD/Mi0xj1bgQHufyekMw/nSVj9ukpaF0mppoW9lMKNqFoU1pSWQ==
   dependencies:
     http-link-header "^1.1.1"
     uuid "^9.0.1"
 
-"@activitypods/ontologies@2.0.0-alpha.2":
-  version "2.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@activitypods/ontologies/-/ontologies-2.0.0-alpha.2.tgz#5b63b16c0b08bb5ba446ea3a75a940101234898a"
-  integrity sha512-Ldk/JX3fu+6rPXI+gTFxUHIAlLI0t4EKRorIMOLzIRRQfeNvLwRYevk+AyGBhmpr1ZRkTwQlH4dT5MQWlMp5Mw==
+"@activitypods/ontologies@2.0.0-alpha.4":
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@activitypods/ontologies/-/ontologies-2.0.0-alpha.4.tgz#a54ab30d94375ae8bc53c2bd5b17062de4673f18"
+  integrity sha512-2UbSbhZt9kW/cU1DLhGkG2hHkdrCPDXwVNfjCUuosTfMQPYKdnm264EiEtyFg2pspxMLwLLKox9asUNic4Urzw==
 
-"@activitypods/solid-notifications@2.0.0-alpha.2":
-  version "2.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@activitypods/solid-notifications/-/solid-notifications-2.0.0-alpha.2.tgz#50f77b011726adc9873dfe8c40b6d28094420878"
-  integrity sha512-Aan5tiqw1i9IP4+gGmYpJtv6pfSAzMpSPmNC24uDHdH0NfBlM/MvfddUHX61ZDt/2D0LTb9qPcJyUHbAxaff9Q==
+"@activitypods/solid-notifications@2.0.0-alpha.4":
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@activitypods/solid-notifications/-/solid-notifications-2.0.0-alpha.4.tgz#cafc8f18fadac74f756f6ba3c0e2ac71c123912c"
+  integrity sha512-wDCW9HrNn1k/IDzbzFTGjyzXDXZ211vSs0A8apSKRlWZv31LmMew171eW64dNmu6j9lqqBZlsRlhF+Tahctrlg==
   dependencies:
     http-link-header "^1.1.1"
     uuid "^9.0.1"
 
-"@activitypods/type-index@2.0.0-alpha.2":
-  version "2.0.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@activitypods/type-index/-/type-index-2.0.0-alpha.2.tgz#02ce06ccd41634958c7681e35b28d5e896faf548"
-  integrity sha512-eD4bAj/8KIH1BUOyQZ4uPnXocSSUlf7xkMtg7l+fA4/ijXVd+cFm/df60xrngJL3JA2KaFfzvuOabzUW9qo/ag==
+"@activitypods/type-index@2.0.0-alpha.4":
+  version "2.0.0-alpha.4"
+  resolved "https://registry.yarnpkg.com/@activitypods/type-index/-/type-index-2.0.0-alpha.4.tgz#d71790aae4b661ed7abab0ed13768ccbd5d025d1"
+  integrity sha512-ieKOQXLDk1iU4Jz3L5UFBrWkVJ/C12Es9NO2tFDjQRnbr3zOizrqgjFRCRO8kIWL6JcKRup2FwQoNGKBPIR7/g==
   dependencies:
     "@rdfjs/data-model" "^1.3.4"
     "@semapps/ldp" "0.8.2"
@@ -6033,7 +6033,16 @@ string-template@^1.0.0:
   resolved "https://registry.yarnpkg.com/string-template/-/string-template-1.0.0.tgz#9e9f2233dc00f218718ec379a28a5673ecca8b96"
   integrity sha512-SLqR3GBUXuoPP5MmYtD7ompvXiG87QjT6lzOszyXjTM86Uu7At7vNnt2xgyTLq5o9T4IxTYFyGxcULqpsmsfdg==
 
-"string-width-cjs@npm:string-width@^4.2.0", "string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.1.0, string-width@^4.2.3:
+"string-width-cjs@npm:string-width@^4.2.0":
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
+  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
+  dependencies:
+    emoji-regex "^8.0.0"
+    is-fullwidth-code-point "^3.0.0"
+    strip-ansi "^6.0.1"
+
+"string-width@^1.0.2 || 2 || 3 || 4", string-width@^4.1.0, string-width@^4.2.3:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -6107,7 +6116,7 @@ string_decoder@~1.1.1:
   dependencies:
     safe-buffer "~5.1.0"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -6120,6 +6129,13 @@ strip-ansi@^5.0.0, strip-ansi@^5.1.0, strip-ansi@^5.2.0:
   integrity sha512-DuRs1gKbBqsMKIZlrffwlug8MHkcnpjs5VPmL1PAh+mA30U0DTotfDZ0d2UUsXpPmPmMMJ6W773MaA3J+lbiWA==
   dependencies:
     ansi-regex "^4.1.0"
+
+strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
+  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
+  dependencies:
+    ansi-regex "^5.0.1"
 
 strip-ansi@^7.0.1:
   version "7.1.0"

@@ -1,6 +1,5 @@
 const urlJoin = require('url-join');
 const { AppService } = require('@activitypods/app');
-const { AS_PREFIX } = require('@semapps/activitypub');
 const CONFIG = require('../config/config');
 
 module.exports = {
