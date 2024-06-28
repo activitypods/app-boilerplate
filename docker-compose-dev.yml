@@ -1,9 +1,8 @@
 services:
   fuseki:
     image: semapps/jena-fuseki-webacl
-    container_name: fuseki
     volumes:
-      - ./data/fuseki:/fuseki
+      - ./data/fuseki:/fuseki:z
     ports:
       - "3030:3030"
     expose:
@@ -13,49 +12,45 @@ services:
 
   activitypods-backend:
     image: activitypods/backend
-    container_name: activitypods-backend
     depends_on:
       - fuseki
       - redis
     restart: always
     expose:
-      - '3000'
+      - "3000"
     volumes:
-      - ./data/backend/logs:/app/backend/logs
-      - ./data/backend/jwt:/app/backend/jwt
-      - ./data/backend/uploads:/app/backend/uploads
+      - ./data/backend/logs:/app/backend/logs:z
+      - ./data/backend/jwt:/app/backend/jwt:z
+      - ./data/backend/uploads:/app/backend/uploads:z
     environment:
       SEMAPPS_JENA_PASSWORD: admin
       SEMAPPS_DEFAULT_LOCALE: en
       SEMAPPS_MAPBOX_ACCESS_TOKEN: ${MAPBOX_ACCESS_TOKEN:?You must set it in the .env.local file}
     # Allow the Pod backend to access the app backend
     # See https://docs.docker.com/network/drivers/host/
-    network_mode: "host" 
+    network_mode: "host"
 
   activitypods-frontend:
     image: activitypods/frontend
-    container_name: activitypods-frontend
     depends_on:
       - activitypods-backend
     restart: always
     ports:
       - "5000:5000"
     expose:
-      - '5000'
+      - "5000"
     environment:
       REACT_APP_CONFIG_URL: "http://localhost:3000/.well-known/config.js"
 
   mailcatcher:
     image: dockage/mailcatcher:0.7.1
-    container_name: mailcatcher
     ports:
-      - '1080:1080'
-      - '1025:1025'
+      - "1080:1080"
+      - "1025:1025"
     restart: on-failure
 
   redis:
     image: redis
-    container_name: redis
     expose:
       - "6379"
     ports:
@@ -66,10 +61,9 @@ services:
 
   arena:
     image: activitypods/arena
-    container_name: arena
     restart: always
     volumes:
-      - ./arena-dev.json:/opt/arena/src/server/config/index.json
+      - ./arena-dev.json:/opt/arena/src/server/config/index.json:z
     depends_on:
       - redis
     expose:
