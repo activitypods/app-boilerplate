@@ -1,7 +1,6 @@
 services:
   traefik:
     image: traefik:v2.3
-    container_name: traefik
     command:
       - "--api.insecure=true"
       - "--providers.docker=true"
@@ -19,14 +18,13 @@ services:
       - "443:443"
       - "8080:8080"
     volumes:
-      - ./data/letsencrypt:/letsencrypt
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./data/letsencrypt:/letsencrypt:z
+      - /var/run/docker.sock:/var/run/docker.sock:ro:z
 
   fuseki:
     image: semapps/jena-fuseki-webacl
-    container_name: fuseki
     volumes:
-      - ./data/fuseki:/fuseki
+      - ./data/fuseki:/fuseki:z
     ports:
       - "3030:3030"
     expose:
@@ -38,7 +36,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.frontend
-    container_name: app-frontend
     restart: always
     expose:
       - "4000"
@@ -57,14 +54,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.backend
-    container_name: app-backend
     depends_on:
       - fuseki
       - redis
     volumes:
-      - ./data/backend/logs:/app/backend/logs
-      - ./data/backend/jwt:/app/backend/jwt
-      - ./data/backend/uploads:/app/backend/uploads
+      - ./data/backend/logs:/app/backend/logs:z
+      - ./data/backend/jwt:/app/backend/jwt:z
+      - ./data/backend/uploads:/app/backend/uploads:z
     expose:
       - "3000"
     labels:
@@ -80,7 +76,6 @@ services:
 
   redis:
     image: redis
-    container_name: redis
     expose:
       - "6379"
     volumes:
@@ -89,10 +84,9 @@ services:
 
   arena:
     image: activitypods/arena
-    container_name: arena
     restart: always
     volumes:
-      - ./arena-prod.json:/opt/arena/src/server/config/index.json
+      - ./arena-prod.json:/opt/arena/src/server/config/index.json:z
     depends_on:
       - redis
     expose:
