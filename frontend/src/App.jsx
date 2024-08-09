@@ -11,8 +11,8 @@ import * as resources from './resources';
 
 import RedirectPage from './pages/RedirectPage';
 
-const customPodProviders = import.meta.env.VITE_POD_PROVIDER_DOMAIN_NAME && [
-  { 'apods:domainName': import.meta.env.VITE_POD_PROVIDER_DOMAIN_NAME, 'apods:area': 'Local' }
+const customPodProviders = import.meta.env.VITE_POD_PROVIDER_BASE_URL && [
+  { 'apods:baseUrl': import.meta.env.VITE_POD_PROVIDER_BASE_URL, 'apods:area': 'Local' }
 ];
 
 const LoginPage = props => <PodLoginPage customPodProviders={customPodProviders} {...props} />;
