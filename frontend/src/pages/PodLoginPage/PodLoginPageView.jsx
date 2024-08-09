@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useNotify, useLocaleState, useTranslate, useLogin, useLogout } from 'react-admin';
+import { useEffect, useState } from 'react';
+import { useNotify, useLocaleState, useTranslate, useLogin, useLogout, useGetIdentity, useRedirect } from 'react-admin';
 import { useSearchParams } from 'react-router-dom';
 import {
   Box,
@@ -26,7 +26,7 @@ const PodProvider = ({ podProvider, onSelect }) => (
             <StorageIcon />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary={podProvider['apods:domainName']} secondary={podProvider['apods:area']} />
+        <ListItemText primary={(new URL(podProvider['apods:baseUrl'])).host} secondary={podProvider['apods:area']} />
       </ListItemButton>
     </ListItem>
   </>
@@ -39,14 +39,16 @@ const PodLoginPageView = ({ text, customPodProviders }) => {
   const login = useLogin();
   const logout = useLogout();
   const translate = useTranslate();
+  const redirect = useRedirect();
+  const { data: identity, isLoading: isIdentityLoading } = useGetIdentity();
   const [podProviders, setPodProviders] = useState(customPodProviders || []);
   const isSignup = searchParams.has('signup');
-  const redirect = searchParams.get('redirect');
+  const redirectUrl = searchParams.get('redirect');
 
   useEffect(() => {
     (async () => {
       if (podProviders.length === 0) {
-        const results = await fetch('https://data.activitypods.org/pod-providers', {
+        const results = await fetch('https://activitypods.org/data/pod-providers', {
           headers: {
             Accept: 'application/ld+json'
           }
@@ -72,9 +74,13 @@ const PodLoginPageView = ({ text, customPodProviders }) => {
       // Automatically login if Pod provider is known
       login({ issuer: searchParams.get('iss') });
     } else if (searchParams.has('logout')) {
-      logout();
+      logout(redirectUrl);
+    } else if (!isIdentityLoading && identity?.id) {
+      redirect('/');
     }
-  }, [searchParams, login, logout]);
+  }, [searchParams, login, logout, identity, isIdentityLoading, redirect, redirectUrl]);
+
+  if (isIdentityLoading) return null;
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
@@ -115,11 +121,8 @@ const PodLoginPageView = ({ text, customPodProviders }) => {
                 podProvider={podProvider}
                 onSelect={() =>
                   login({
-                    // TODO include HTTP scheme in Pod providers list
-                    issuer: `${podProvider['apods:domainName'].includes('localhost') ? 'http' : 'https'}://${
-                      podProvider['apods:domainName']
-                    }`,
-                    redirect,
+                    issuer: podProvider['apods:baseUrl'],
+                    redirect: redirectUrl,
                     isSignup
                   })
                 }
