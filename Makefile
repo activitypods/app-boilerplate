@@ -16,6 +16,10 @@ stop:
 config:
 	$(DOCKER_COMPOSE_DEV) config
 
+upgrade:
+	$(DOCKER_COMPOSE_DEV) pull
+	$(DOCKER_COMPOSE_DEV) up -d
+
 logs-activitypods:
 	$(DOCKER_COMPOSE_DEV) logs activitypods-backend
 
@@ -36,6 +40,10 @@ stop-prod:
 
 config-prod:
 	$(DOCKER_COMPOSE_PROD) config
+
+upgrade-prod:
+	$(DOCKER_COMPOSE_PROD) pull
+	$(DOCKER_COMPOSE_PROD) up -d
 
 attach-backend-prod:
 	$(DOCKER_COMPOSE_PROD) exec backend pm2 attach 0
