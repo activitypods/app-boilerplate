@@ -1,43 +1,36 @@
 {
   "queues": [
     {
-      "name": "sendMail",
-      "hostId": "activitypods",
-      "host": "redis",
-      "port": 6379,
-      "db": 1
-    },
-    {
       "name": "remotePost",
-      "hostId": "activitypods",
+      "hostId": "app",
       "host": "redis",
       "port": 6379,
-      "db": 1
+      "db": 8
     },
     {
-      "name": "localPost",
-      "hostId": "activitypods",
+      "name": "processOutbox",
+      "hostId": "app",
       "host": "redis",
       "port": 6379,
-      "db": 1
+      "db": 8
     },
     {
-      "name": "webhookPost",
-      "hostId": "activitypods",
+      "name": "processInbox",
+      "hostId": "app",
       "host": "redis",
       "port": 6379,
-      "db": 1
+      "db": 8
     },
     {
       "name": "registerListener",
-      "hostId": "welcometomyplace",
+      "hostId": "app",
       "host": "redis",
       "port": 6379,
       "db": 8
     },
     {
       "name": "timeout",
-      "hostId": "welcometomyplace",
+      "hostId": "app",
       "host": "redis",
       "port": 6379,
       "db": 8

@@ -15,7 +15,14 @@
       "db": 1
     },
     {
-      "name": "localPost",
+      "name": "processOutbox",
+      "hostId": "activitypods",
+      "host": "redis",
+      "port": 6379,
+      "db": 1
+    },
+    {
+      "name": "processInbox",
       "hostId": "activitypods",
       "host": "redis",
       "port": 6379,
@@ -30,14 +37,35 @@
     },
     {
       "name": "registerListener",
-      "hostId": "welcometomyplace",
+      "hostId": "app",
       "host": "redis",
       "port": 6379,
       "db": 8
     },
     {
       "name": "timeout",
-      "hostId": "welcometomyplace",
+      "hostId": "app",
+      "host": "redis",
+      "port": 6379,
+      "db": 8
+    },
+    {
+      "name": "remotePost",
+      "hostId": "app",
+      "host": "redis",
+      "port": 6379,
+      "db": 8
+    },
+    {
+      "name": "processOutbox",
+      "hostId": "app",
+      "host": "redis",
+      "port": 6379,
+      "db": 8
+    },
+    {
+      "name": "processInbox",
+      "hostId": "app",
       "host": "redis",
       "port": 6379,
       "db": 8
