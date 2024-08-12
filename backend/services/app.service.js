@@ -2,6 +2,7 @@ const urlJoin = require('url-join');
 const { AppService } = require('@activitypods/app');
 const CONFIG = require('../config/config');
 
+// For documentation, see: https://docs.activitypods.org/app-framework/backend/application-registration/
 module.exports = {
   mixins: [AppService],
   settings: {
