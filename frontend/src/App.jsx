@@ -1,7 +1,6 @@
 import React from 'react';
 import { Admin, CustomRoutes, Resource, memoryStore } from 'react-admin';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { StyledEngineProvider } from '@mui/material/styles';
 import PodLoginPage from './pages/PodLoginPage/PodLoginPage';
 
 import authProvider from './config/authProvider';
