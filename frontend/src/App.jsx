@@ -1,20 +1,21 @@
 import React from 'react';
-import { Admin, CustomRoutes, Resource, memoryStore } from 'react-admin';
+import { Admin, CustomRoutes, Resource, Layout, memoryStore } from 'react-admin';
 import { BrowserRouter, Route } from 'react-router-dom';
-import PodLoginPage from './pages/PodLoginPage/PodLoginPage';
-
 import authProvider from './config/authProvider';
 import dataProvider from './config/dataProvider';
 import i18nProvider from './config/i18nProvider';
 import * as resources from './resources';
-
+import PodLoginPage from './pages/PodLoginPage/PodLoginPage';
 import RedirectPage from './pages/RedirectPage';
+import BackgroundChecks from './BackgroundChecks';
 
 const customPodProviders = import.meta.env.VITE_POD_PROVIDER_BASE_URL && [
   { 'apods:baseUrl': import.meta.env.VITE_POD_PROVIDER_BASE_URL, 'apods:area': 'Local' }
 ];
 
 const LoginPage = props => <PodLoginPage customPodProviders={customPodProviders} {...props} />;
+
+const LayoutWithBackgroundChecks = (props) => <BackgroundChecks><Layout {...props} /></BackgroundChecks>;
 
 const App = () => (
   <BrowserRouter>
@@ -24,6 +25,7 @@ const App = () => (
       dataProvider={dataProvider}
       i18nProvider={i18nProvider}
       loginPage={LoginPage}
+      layout={LayoutWithBackgroundChecks}
       store={memoryStore()}
       requireAuth
     >
