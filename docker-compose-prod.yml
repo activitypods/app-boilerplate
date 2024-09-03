@@ -35,7 +35,8 @@ services:
   app-frontend:
     build:
       context: .
-      dockerfile: Dockerfile.frontend
+      dockerfile: ./docker/frontend.dockerfile
+    image: $FRONTEND_DOCKER_IMAGE
     restart: always
     expose:
       - "4000"
@@ -53,7 +54,8 @@ services:
   app-backend:
     build:
       context: .
-      dockerfile: Dockerfile.backend
+      dockerfile: ./docker/backend.dockerfile
+    image: $BACKEND_DOCKER_IMAGE
     depends_on:
       - fuseki
       - redis
@@ -80,13 +82,13 @@ services:
       - "6379"
     volumes:
       - ./data/redis:/data:z
-    command: ["redis-server", "--appendonly", "yes"]
+    command: [ "redis-server", "--appendonly", "yes" ]
 
   arena:
     image: activitypods/arena
     restart: always
     volumes:
-      - ./arena-prod.json:/opt/arena/src/server/config/index.json:z
+      - ./docker/arena-prod.json:/opt/arena/src/server/config/index.json:z
     depends_on:
       - redis
     expose:
