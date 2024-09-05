@@ -6,9 +6,9 @@ See the documentation to find how to use this boilerplate:
 
 https://docs.activitypods.org/tutorials/create-your-first-social-app/
 
-## Make Commands for Managing the ActivityPods Provider
+## Commands
 
-### For Development
+### For development
 
 `make start` Starts the activitypods provider using a docker-compose file. This includes the activitypods backend and frontend server, the fuseki db, mailcatcher, redis, and arena.
 
@@ -20,7 +20,7 @@ https://docs.activitypods.org/tutorials/create-your-first-social-app/
 
 `make attach-activitypods` Attaches to the [moleculer](https://moleculer.services/) repl of the activitypods backend.
 
-### For Production
+### For production
 
 `make build-prod` Builds the activitypods provider images for production. In addition to the dev images, this includes a traefik reverse proxy.
 
