@@ -1,7 +1,7 @@
 import React from 'react';
-import { Admin, CustomRoutes, Resource, Layout, memoryStore } from 'react-admin';
+import { Admin, CustomRoutes, Resource, Layout as RaLayout, memoryStore, AppBar as RaAppBar } from 'react-admin';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { BackgroundChecks, PodLoginPage, RedirectPage } from '@activitypods/react';
+import { BackgroundChecks, PodLoginPage, RedirectPage, UserMenu } from '@activitypods/react';
 import authProvider from './config/authProvider';
 import dataProvider from './config/dataProvider';
 import i18nProvider from './config/i18nProvider';
@@ -19,9 +19,11 @@ const LoginPage = props => (
   />
 );
 
-const LayoutWithBackgroundChecks = props => (
+const AppBar = () => <RaAppBar userMenu={<UserMenu />} />;
+
+const Layout = props => (
   <BackgroundChecks clientId={import.meta.env.VITE_BACKEND_CLIENT_ID}>
-    <Layout {...props} />
+    <RaLayout appBar={AppBar} {...props} />
   </BackgroundChecks>
 );
 
@@ -33,7 +35,7 @@ const App = () => (
       dataProvider={dataProvider}
       i18nProvider={i18nProvider}
       loginPage={LoginPage}
-      layout={LayoutWithBackgroundChecks}
+      layout={Layout}
       store={memoryStore()}
       requireAuth
     >
