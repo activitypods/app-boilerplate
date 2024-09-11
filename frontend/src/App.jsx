@@ -1,13 +1,15 @@
 import React from 'react';
-import { Admin, CustomRoutes, Resource, Layout as RaLayout, memoryStore, AppBar as RaAppBar } from 'react-admin';
+import { Admin, CustomRoutes, Resource, memoryStore } from 'react-admin';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { BackgroundChecks, PodLoginPage, RedirectPage, UserMenu } from '@activitypods/react';
+import { PodLoginPage, RedirectPage } from '@activitypods/react';
 import authProvider from './config/authProvider';
 import dataProvider from './config/dataProvider';
 import i18nProvider from './config/i18nProvider';
 import ontologies from './config/ontologies.json';
+import Layout from './Layout';
 import * as resources from './resources';
 
+// If a custom Pod provider is defined, use it instead of loading all available Pod providers
 const LoginPage = props => (
   <PodLoginPage
     customPodProviders={
@@ -17,14 +19,6 @@ const LoginPage = props => (
     }
     {...props}
   />
-);
-
-const AppBar = () => <RaAppBar userMenu={<UserMenu />} />;
-
-const Layout = props => (
-  <BackgroundChecks clientId={import.meta.env.VITE_BACKEND_CLIENT_ID}>
-    <RaLayout appBar={AppBar} {...props} />
-  </BackgroundChecks>
 );
 
 const App = () => (
