@@ -32,6 +32,7 @@ const App = () => (
       layout={Layout}
       store={memoryStore()}
       requireAuth
+      disableTelemetry
     >
       {Object.entries(resources).map(([key, resource]) => (
         <Resource key={key} name={key} {...resource.config} />
