@@ -13,7 +13,7 @@ const Layout = props => {
   return (
     <BackgroundChecks
       clientId={import.meta.env.VITE_BACKEND_CLIENT_ID}
-      listeningTo={[identity?.webIdData.inbox, identity?.webIdData.outbox]}
+      listeningTo={[identity?.webIdData?.inbox, identity?.webIdData?.outbox]}
     >
       <RaLayout appBar={AppBar} {...props} />
     </BackgroundChecks>
