@@ -21,7 +21,7 @@ module.exports = {
           triplesToAdd: [
             triple(
               namedNode(resource.id || resource['@id']),
-              namedNode('https://www.w3.org/ns/activitystreams#summary'),
+              namedNode('http://www.w3.org/ns/activitystreams#summary'),
               literal('A super-powerful AI-generated summary')
             )
           ],
