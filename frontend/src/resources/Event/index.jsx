@@ -20,25 +20,17 @@ export default {
     en: {
       name: 'Event |||| Events',
       fields: {
-        describes: 'User ID',
-        'vcard:given-name': 'Surname',
-        'vcard:family-name': 'Family name',
-        'vcard:note': 'About you',
-        'vcard:photo': 'Picture',
-        'vcard:hasAddress': 'Home address',
-        'dc:created': 'Account created'
+        name: 'Title',
+        content: 'Description',
+        startTime: 'Start time'
       }
     },
     fr: {
       name: 'Evénement |||| Evénements',
       fields: {
-        describes: 'Identifiant',
-        'vcard:given-name': 'Prénom',
-        'vcard:family-name': 'Nom de famille',
-        'vcard:note': 'En deux mots',
-        'vcard:photo': 'Photo',
-        'vcard:hasAddress': 'Adresse du domicile',
-        'dc:created': "Date d'inscription"
+        name: 'Titre',
+        content: 'Description',
+        startTime: 'Date de début'
       }
     }
   }
