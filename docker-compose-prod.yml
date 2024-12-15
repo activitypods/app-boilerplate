@@ -23,6 +23,7 @@ services:
 
   fuseki:
     image: semapps/jena-fuseki-webacl
+    restart: unless-stopped
     volumes:
       - ./data/fuseki:/fuseki:z
     ports:
@@ -37,7 +38,7 @@ services:
       context: .
       dockerfile: ./docker/frontend.dockerfile
     image: $FRONTEND_DOCKER_IMAGE
-    restart: always
+    restart: unless-stopped
     expose:
       - "4000"
     labels:
@@ -78,6 +79,7 @@ services:
 
   redis:
     image: redis
+    restart: unless-stopped
     expose:
       - "6379"
     volumes:
