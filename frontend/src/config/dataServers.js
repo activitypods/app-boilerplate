@@ -5,6 +5,7 @@ const dataServers = {
     default: true,
     baseUrl: null, // Calculated from the token
     sparqlEndpoint: null,
+    void: false,
     containers: {
       pod: {
         'vcard:Individual': ['/vcard/individual'],
