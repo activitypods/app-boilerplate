@@ -1,10 +1,13 @@
+const urlJoin = require('url-join');
 const { triple, namedNode, literal } = require('@rdfjs/data-model');
 const { PodResourcesHandlerMixin } = require('@activitypods/app');
+const CONFIG = require('../config/config');
 
 module.exports = {
   name: 'events',
   mixins: [PodResourcesHandlerMixin],
   settings: {
+    shapeTreeUri: urlJoin(CONFIG.SHAPE_REPOSITORY_URL, 'trees/as/Event'),
     type: 'Event'
   },
   actions: {
