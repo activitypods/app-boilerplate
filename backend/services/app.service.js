@@ -6,6 +6,7 @@ const CONFIG = require('../config/config');
 module.exports = {
   mixins: [AppService],
   settings: {
+    baseUrl: CONFIG.HOME_URL,
     app: {
       name: CONFIG.APP_NAME,
       description: CONFIG.APP_DESCRIPTION,
