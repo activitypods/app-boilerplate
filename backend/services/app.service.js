@@ -22,11 +22,11 @@ module.exports = {
     accessNeeds: {
       required: [
         {
-          registeredClass: 'as:Event',
+          shapeTreeUri: urlJoin(CONFIG.SHAPE_REPOSITORY_URL, 'trees/as/Event'),
           accessMode: ['acl:Read', 'acl:Write']
         },
         {
-          registeredClass: 'vcard:Individual',
+          shapeTreeUri: urlJoin(CONFIG.SHAPE_REPOSITORY_URL, 'trees/as/Profile'),
           accessMode: 'acl:Read'
         },
         'apods:ReadInbox',
@@ -38,24 +38,6 @@ module.exports = {
         'apods:UpdateWebId'
       ],
       optional: []
-    },
-    classDescriptions: {
-      'as:Event': {
-        label: {
-          en: 'Events',
-          fr: 'Événements'
-        },
-        labelPredicate: 'as:name',
-        openEndpoint: urlJoin(CONFIG.FRONT_URL, '/r')
-      },
-      'vcard:Individual': {
-        label: {
-          en: 'Profiles',
-          fr: 'Profils'
-        },
-        labelPredicate: 'vcard:given-name',
-        openEndpoint: urlJoin(CONFIG.FRONT_URL, '/r')
-      }
     },
     queueServiceUrl: CONFIG.QUEUE_SERVICE_URL
   }
