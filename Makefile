@@ -45,8 +45,11 @@ upgrade-prod:
 	$(DOCKER_COMPOSE_PROD) pull
 	$(DOCKER_COMPOSE_PROD) up -d
 
+logs-backend-prod:
+	$(DOCKER_COMPOSE_PROD) logs app-backend
+
 attach-backend-prod:
-	$(DOCKER_COMPOSE_PROD) exec backend pm2 attach 0
+	$(DOCKER_COMPOSE_PROD) exec app-backend pm2 attach 0
 
 # Publish commands
 
