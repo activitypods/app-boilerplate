@@ -37,6 +37,14 @@ services:
     build:
       context: .
       dockerfile: ./docker/frontend.dockerfile
+      args:
+        VITE_APP_NAME: $APP_NAME
+        VITE_APP_DESCRIPTION: $APP_DESCRIPTION
+        VITE_APP_LANG: $APP_LANG
+        VITE_BACKEND_URL: https://${DOMAIN_NAME}${BACKEND_PATH}
+        VITE_BACKEND_CLIENT_ID: https://${DOMAIN_NAME}${BACKEND_PATH}/app
+        VITE_POD_PROVIDER_BASE_URL: $POD_PROVIDER_BASE_URL
+        VITE_PORT: 4000
     image: $FRONTEND_DOCKER_IMAGE
     restart: unless-stopped
     expose:
@@ -46,11 +54,6 @@ services:
       - "traefik.http.routers.frontend.rule=Host(`${DOMAIN_NAME}`)"
       - "traefik.http.routers.frontend.entrypoints=websecure"
       - "traefik.http.routers.frontend.tls.certresolver=myresolver"
-    env_file:
-      - ./frontend/.env
-      - ./frontend/.env.production
-      - path: ./frontend/.env.production.local
-        required: false
 
   app-backend:
     build:
