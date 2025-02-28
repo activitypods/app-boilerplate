@@ -1,8 +1,9 @@
+import urlJoin from 'url-join';
+import EventIcon from '@mui/icons-material/Event';
 import EventCreate from './EventCreate';
 import EventEdit from './EventEdit';
 import EventList from './EventList';
 import EventShow from './EventShow';
-import EventIcon from '@mui/icons-material/Event';
 
 export default {
   config: {
@@ -14,7 +15,7 @@ export default {
     recordRepresentation: 'vcard:given-name'
   },
   dataModel: {
-    types: ['as:Event']
+    shapeTreeUri: urlJoin(import.meta.env.VITE_SHAPE_REPOSITORY_URL, 'shapetrees/as/Event')
   },
   translations: {
     en: {
