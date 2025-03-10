@@ -4,7 +4,6 @@ import { LoginPage, RedirectPage } from '@activitypods/react';
 import authProvider from './config/authProvider';
 import dataProvider from './config/dataProvider';
 import i18nProvider from './config/i18nProvider';
-import ontologies from './config/ontologies.json';
 import Layout from './Layout';
 import * as resources from './resources';
 
@@ -38,7 +37,7 @@ const App = () => (
         <Resource key={key} name={key} {...resource.config} />
       ))}
       <CustomRoutes noLayout>
-        <Route path="/r" element={<RedirectPage ontologies={ontologies} />} />
+        <Route path="/r" element={<RedirectPage />} />
       </CustomRoutes>
     </Admin>
   </BrowserRouter>
