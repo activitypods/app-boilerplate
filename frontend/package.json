@@ -27,6 +27,7 @@
     "@semapps/input-components": "1.0.4",
     "@semapps/list-components": "1.0.4",
     "@semapps/semantic-data-provider": "1.0.4",
+    "change-case": "^5.4.4",
     "ra-language-english": "^4.11.0",
     "ra-language-french": "^4.11.0",
     "react": "^18.2.0",
