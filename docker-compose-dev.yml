@@ -26,6 +26,7 @@ services:
       SEMAPPS_JENA_PASSWORD: admin
       SEMAPPS_APP_LANG: en
       SEMAPPS_MAPBOX_ACCESS_TOKEN: ${MAPBOX_ACCESS_TOKEN}
+      SEMAPPS_SHAPE_REPOSITORY_URL: ${SHAPE_REPOSITORY_URL}
     # Allow the Pod backend to access the app backend as localhost:3001
     # See https://docs.docker.com/network/drivers/host/
     network_mode: "host"

@@ -7,8 +7,7 @@ module.exports = {
   name: 'events',
   mixins: [PodResourcesHandlerMixin],
   settings: {
-    shapeTreeUri: urlJoin(CONFIG.SHAPE_REPOSITORY_URL, 'trees/as/Event'),
-    type: 'Event'
+    shapeTreeUri: urlJoin(CONFIG.SHAPE_REPOSITORY_URL, 'shapetrees/as/Event')
   },
   actions: {
     async tagAsStarted(ctx) {
@@ -24,8 +23,8 @@ module.exports = {
           triplesToAdd: [
             triple(
               namedNode(resource.id || resource['@id']),
-              namedNode('http://www.w3.org/ns/activitystreams#summary'),
-              literal('A super-powerful AI-generated summary')
+              namedNode('https://www.w3.org/ns/activitystreams#summary'),
+              literal('An example backend-generated summary')
             )
           ],
           actorUri
