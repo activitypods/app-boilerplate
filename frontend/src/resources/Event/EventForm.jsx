@@ -1,3 +1,4 @@
+import React from 'react';
 import { TextInput, required, SimpleForm } from 'react-admin';
 import { DateTimeInput } from '@semapps/date-components';
 

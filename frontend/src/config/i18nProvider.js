@@ -3,6 +3,7 @@ import raEnglishMessages from 'ra-language-english';
 import raFrenchMessages from 'ra-language-french';
 import { frenchMessages as authFrenchMessages, englishMessages as authEnglishMessages } from '@semapps/auth-provider';
 import { frenchMessages as apodsFrenchMessages, englishMessages as apodsEnglishMessages } from '@activitypods/react';
+import * as resources from '../resources';
 
 const getMessages = lang => {
   if (lang === 'en') {
@@ -10,56 +11,18 @@ const getMessages = lang => {
       ...raEnglishMessages,
       ...authEnglishMessages,
       ...apodsEnglishMessages,
-      resources: {
-        Contact: {
-          name: 'Contact |||| Contacts',
-          fields: {
-            describes: 'User ID',
-            'vcard:given-name': 'Surname',
-            'vcard:family-name': 'Family name',
-            'vcard:note': 'About you',
-            'vcard:photo': 'Picture',
-            'vcard:hasAddress': 'Home address',
-            'dc:created': 'Account created'
-          }
-        },
-        Event: {
-          name: 'Event |||| Events',
-          fields: {
-            name: 'Title',
-            content: 'Description',
-            startTime: 'Start time'
-          }
-        }
-      }
+      resources: Object.fromEntries(
+        Object.entries(resources).map(([k, v]) => [k, v.translations ? v.translations[lang] : {}])
+      )
     };
   } else if (lang === 'fr') {
     return {
       ...raFrenchMessages,
       ...authFrenchMessages,
       ...apodsFrenchMessages,
-      resources: {
-        Contact: {
-          name: 'Profil |||| Profils',
-          fields: {
-            describes: 'Identifiant',
-            'vcard:given-name': 'Prénom',
-            'vcard:family-name': 'Nom de famille',
-            'vcard:note': 'En deux mots',
-            'vcard:photo': 'Photo',
-            'vcard:hasAddress': 'Adresse du domicile',
-            'dc:created': "Date d'inscription"
-          }
-        },
-        Event: {
-          name: 'Evénement |||| Evénements',
-          fields: {
-            name: 'Titre',
-            content: 'Description',
-            startTime: 'Date de début'
-          }
-        }
-      }
+      resources: Object.fromEntries(
+        Object.entries(resources).map(([k, v]) => [k, v.translations ? v.translations[lang] : {}])
+      )
     };
   } else {
     throw new Error('Language not handled: ' + lang);

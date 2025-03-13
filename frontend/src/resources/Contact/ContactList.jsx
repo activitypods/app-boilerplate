@@ -1,3 +1,4 @@
+import React from 'react';
 import { List, SimpleList } from 'react-admin';
 
 const ContactList = () => (

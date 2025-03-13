@@ -5,14 +5,7 @@ import authProvider from './config/authProvider';
 import dataProvider from './config/dataProvider';
 import i18nProvider from './config/i18nProvider';
 import Layout from './Layout';
-import ContactShow from './resources/Contact/ContactShow';
-import ContactList from './resources/Contact/ContactList';
-import ContactIcon from '@mui/icons-material/Contacts';
-import EventShow from './resources/Event/EventShow';
-import EventList from './resources/Event/EventList';
-import EventCreate from './resources/Event/EventCreate';
-import EventEdit from './resources/Event/EventEdit';
-import EventIcon from '@mui/icons-material/Event';
+import * as resources from './resources';
 
 // If a custom Pod provider is defined, use it instead of loading all available Pod providers
 const MyLoginPage = props => (
@@ -40,22 +33,9 @@ const App = () => (
       requireAuth
       disableTelemetry
     >
-      <Resource
-        name="Event"
-        show={EventShow}
-        list={EventList}
-        create={EventCreate}
-        edit={EventEdit}
-        icon={EventIcon}
-        recordRepresentation="vcard:given-name"
-      />
-      <Resource
-        name="Contact"
-        show={ContactShow}
-        list={ContactList}
-        icon={ContactIcon}
-        recordRepresentation="vcard:given-name"
-      />
+      {Object.entries(resources).map(([key, resource]) => (
+        <Resource key={key} name={key} {...resource.config} />
+      ))}
       <CustomRoutes noLayout>
         <Route path="/r" element={<RedirectPage />} />
       </CustomRoutes>

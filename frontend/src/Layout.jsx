@@ -1,3 +1,4 @@
+import React from 'react';
 import { Layout as RaLayout, AppBar as RaAppBar, useGetIdentity } from 'react-admin';
 import { BackgroundChecks, UserMenu } from '@activitypods/react';
 
