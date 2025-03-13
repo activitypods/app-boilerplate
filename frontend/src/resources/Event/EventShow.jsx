@@ -1,4 +1,3 @@
-import React from 'react';
 import { Show, SimpleShowLayout, TextField, DateField, TopToolbar, EditButton } from 'react-admin';
 import JoinButton from '../../common/buttons/JoinButton';
 

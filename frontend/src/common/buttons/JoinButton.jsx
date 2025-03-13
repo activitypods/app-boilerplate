@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { useShowContext, useGetIdentity, useNotify, useRefresh, Button } from 'react-admin';
 import { useCollection, useOutbox, ACTIVITY_TYPES } from '@semapps/activitypub-components';
 import LoginIcon from '@mui/icons-material/Login';
