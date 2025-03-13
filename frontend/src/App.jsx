@@ -5,13 +5,13 @@ import authProvider from './config/authProvider';
 import dataProvider from './config/dataProvider';
 import i18nProvider from './config/i18nProvider';
 import Layout from './Layout';
-import ContactShow from './resources/Contact/ContactShow';
-import ContactList from './resources/Contact/ContactList';
+import ContactShow from './resources/contacts/ContactShow';
+import ContactList from './resources/contacts/ContactList';
+import EventShow from './resources/events/EventShow';
+import EventList from './resources/events/EventList';
+import EventCreate from './resources/events/EventCreate';
+import EventEdit from './resources/events/EventEdit';
 import ContactIcon from '@mui/icons-material/Contacts';
-import EventShow from './resources/Event/EventShow';
-import EventList from './resources/Event/EventList';
-import EventCreate from './resources/Event/EventCreate';
-import EventEdit from './resources/Event/EventEdit';
 import EventIcon from '@mui/icons-material/Event';
 
 // If a custom Pod provider is defined, use it instead of loading all available Pod providers
@@ -41,7 +41,7 @@ const App = () => (
       disableTelemetry
     >
       <Resource
-        name="Event"
+        name="events"
         show={EventShow}
         list={EventList}
         create={EventCreate}
@@ -50,7 +50,7 @@ const App = () => (
         recordRepresentation="vcard:given-name"
       />
       <Resource
-        name="Contact"
+        name="contacts"
         show={ContactShow}
         list={ContactList}
         icon={ContactIcon}

@@ -5,10 +5,10 @@ const { origin: backendOrigin } = new URL(import.meta.env.VITE_BACKEND_URL);
 
 export default dataProvider({
   resources: {
-    Event: {
+    events: {
       shapeTreeUri: urlJoin(import.meta.env.VITE_SHAPE_REPOSITORY_URL, 'shapetrees/as/Event')
     },
-    Contact: {
+    contacts: {
       shapeTreeUri: urlJoin(import.meta.env.VITE_SHAPE_REPOSITORY_URL, 'shapetrees/as/Profile')
     }
   },

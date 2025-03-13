@@ -11,7 +11,7 @@ const getMessages = lang => {
       ...authEnglishMessages,
       ...apodsEnglishMessages,
       resources: {
-        Contact: {
+        contacts: {
           name: 'Contact |||| Contacts',
           fields: {
             describes: 'User ID',
@@ -23,7 +23,7 @@ const getMessages = lang => {
             'dc:created': 'Account created'
           }
         },
-        Event: {
+        events: {
           name: 'Event |||| Events',
           fields: {
             name: 'Title',
@@ -39,8 +39,8 @@ const getMessages = lang => {
       ...authFrenchMessages,
       ...apodsFrenchMessages,
       resources: {
-        Contact: {
-          name: 'Profil |||| Profils',
+        contacts: {
+          name: 'Contact |||| Contacts',
           fields: {
             describes: 'Identifiant',
             'vcard:given-name': 'Prénom',
@@ -51,7 +51,7 @@ const getMessages = lang => {
             'dc:created': "Date d'inscription"
           }
         },
-        Event: {
+        events: {
           name: 'Evénement |||| Evénements',
           fields: {
             name: 'Titre',
