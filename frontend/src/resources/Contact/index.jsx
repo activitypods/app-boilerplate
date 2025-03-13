@@ -1,6 +1,7 @@
+import urlJoin from 'url-join';
+import ContactsIcon from '@mui/icons-material/Contacts';
 import ContactList from './ContactList';
 import ContactShow from './ContactShow';
-import ContactsIcon from '@mui/icons-material/Contacts';
 
 export default {
   config: {
@@ -10,7 +11,7 @@ export default {
     recordRepresentation: 'vcard:given-name'
   },
   dataModel: {
-    types: ['vcard:Individual', 'as:Profile']
+    shapeTreeUri: urlJoin(import.meta.env.VITE_SHAPE_REPOSITORY_URL, 'shapetrees/as/Profile')
   },
   translations: {
     en: {

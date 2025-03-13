@@ -6,6 +6,7 @@ const CONFIG = require('../config/config');
 module.exports = {
   mixins: [AppService],
   settings: {
+    baseUrl: CONFIG.HOME_URL,
     app: {
       name: CONFIG.APP_NAME,
       description: CONFIG.APP_DESCRIPTION,
@@ -22,12 +23,16 @@ module.exports = {
     accessNeeds: {
       required: [
         {
-          registeredClass: 'as:Event',
+          shapeTreeUri: urlJoin(CONFIG.SHAPE_REPOSITORY_URL, 'shapetrees/as/Event'),
           accessMode: ['acl:Read', 'acl:Write']
         },
         {
-          registeredClass: 'vcard:Individual',
+          shapeTreeUri: urlJoin(CONFIG.SHAPE_REPOSITORY_URL, 'shapetrees/as/Profile'),
           accessMode: 'acl:Read'
+        },
+        {
+          shapeTreeUri: urlJoin(CONFIG.SHAPE_REPOSITORY_URL, 'shapetrees/File'),
+          accessMode: ['acl:Read', 'acl:Write']
         },
         'apods:ReadInbox',
         'apods:ReadOutbox',
@@ -38,24 +43,6 @@ module.exports = {
         'apods:UpdateWebId'
       ],
       optional: []
-    },
-    classDescriptions: {
-      'as:Event': {
-        label: {
-          en: 'Events',
-          fr: 'Événements'
-        },
-        labelPredicate: 'as:name',
-        openEndpoint: urlJoin(CONFIG.FRONT_URL, '/r')
-      },
-      'vcard:Individual': {
-        label: {
-          en: 'Profiles',
-          fr: 'Profils'
-        },
-        labelPredicate: 'vcard:given-name',
-        openEndpoint: urlJoin(CONFIG.FRONT_URL, '/r')
-      }
     },
     queueServiceUrl: CONFIG.QUEUE_SERVICE_URL
   }
