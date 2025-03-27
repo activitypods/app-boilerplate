@@ -1,12 +1,15 @@
 .DEFAULT_GOAL := help
 .PHONY: docker-build docker-up build start log stop restart
 
-DOCKER_COMPOSE_DEV=docker compose -f docker-compose-dev.yml  --env-file .env --env-file .env.local
+DOCKER_COMPOSE_DEV=docker compose -f docker-compose-dev.yml  --env-file .env
 DOCKER_COMPOSE_PROD=docker compose -f docker-compose-prod.yml --env-file .env.production --env-file .env.production.local
+
+create-env-local-file:
+	touch .env.local
 
 # Dev commands
 
-start:
+start: create-env-local-file
 	$(DOCKER_COMPOSE_DEV) up -d
 
 stop:
@@ -72,3 +75,4 @@ publish-backend-latest:
 	export TAG=latest
 	$(DOCKER_COMPOSE_PROD) build backend
 	$(DOCKER_COMPOSE_PROD) push backend
+
