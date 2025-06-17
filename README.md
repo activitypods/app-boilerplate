@@ -4,7 +4,7 @@
 
 See the documentation to find how to use this boilerplate:
 
-https://docs.activitypods.org/tutorials/create-your-first-social-app/
+https://docs.activitypods.org/guides/create-your-first-social-app/
 
 ## Commands
 
