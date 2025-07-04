@@ -28,7 +28,8 @@ const getMessages = lang => {
           fields: {
             name: 'Title',
             content: 'Description',
-            startTime: 'Start time'
+            startTime: 'Start time',
+            'dc:creator': 'Event organizer'
           }
         }
       }
