@@ -15,7 +15,8 @@
     "dotenv-flow": "^3.2.0",
     "ioredis": "^4.17.3",
     "url-join": "^4.0.1",
-    "moleculer-repl": "^0.6.6"
+    "moleculer-repl": "^0.6.6",
+    "moleculer": "^0.14.35"
   },
   "engines": {
     "node": ">=22.12.0"
